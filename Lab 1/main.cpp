@@ -20,11 +20,23 @@ int main()
 
     srand(time(0));
 
+    cout << "Creating vector...\n";
+
     for (i = 0; i < 20; ++i)
     {
         randomNumbers.push_back(100 + rand() % 900);
     }
 
+    cout << "Printing vector...\n";
+
+    for (i = 0; i < randomNumbers.size(); ++i)
+    {
+        cout << randomNumbers[i] << " ";
+    }
+
+    cout << endl << endl;
+
+    cout << "Sorting vector...\n";
     customSort(randomNumbers);
 
     for (i = 0; i < randomNumbers.size(); ++i)
@@ -34,15 +46,13 @@ int main()
         digitSums.push_back(sumDigits(num));
     }
 
-    cout << "Random Numbers: ";
-    
     for (i = 0; i < randomNumbers.size(); ++i)
     {
         cout << randomNumbers[i] << " ";
     }
 
     cout << endl;
-    cout << "Reversed Numbers: ";
+    cout << "Reversing digits of a vector...\n ";
 
     for (i = 0; i < reversedNumbers.size(); ++i)
     {
@@ -93,7 +103,8 @@ int sumDigits(int num)
 
 void customSort(vector<int> &vec)
 {
-    size_t i, j;
+    size_t i;
+    size_t j;
 
     for (i = 0; i < vec.size(); ++i)
     {

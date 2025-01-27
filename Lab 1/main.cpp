@@ -3,54 +3,11 @@
 #include <iomanip>
 using namespace std;
 
-int reverseDigits(int num)
-{
-    string numStr = to_string(num);
-    int i, j;
+int reverseDigits(int);
 
-    for (i = 0, j = numStr.length() - 1; i < j; ++i, --j)
-    {
-        swap(numStr[i], numStr[j]);
-    }
+int sumDigits(int);
 
-    while (numStr.length() < 3)
-    {
-        numStr += '0';
-    }
-
-    return stoi(numStr);
-}
-
-int sumDigits(int num)
-{
-    int sum = 0;
-
-    while (num > 0)
-    {
-        sum += num % 10;
-        num /= 10;
-    }
-
-    return sum;
-}
-
-void customSort(vector<int> &vec)
-{
-    size_t i, j;
-
-    for (i = 0; i < vec.size(); ++i)
-    {
-        for (j = i + 1; j < vec.size(); ++j)
-        {
-            if (vec[j] < vec[i])
-            {
-                int temp = vec[i];
-                vec[i] = vec[j];
-                vec[j] = temp;
-            }
-        }
-    }
-}
+void customSort(vector<int>&);
 
 int main()
 {
@@ -101,4 +58,53 @@ int main()
     }
 
     return 0;
+}
+
+int reverseDigits(int num)
+{
+    string numStr = to_string(num);
+    int i, j;
+
+    for (i = 0, j = numStr.length() - 1; i < j; ++i, --j)
+    {
+        swap(numStr[i], numStr[j]);
+    }
+
+    while (numStr.length() < 3)
+    {
+        numStr += '0';
+    }
+
+    return stoi(numStr);
+}
+
+int sumDigits(int num)
+{
+    int sum = 0;
+
+    while (num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    return sum;
+}
+
+void customSort(vector<int> &vec)
+{
+    size_t i, j;
+
+    for (i = 0; i < vec.size(); ++i)
+    {
+        for (j = i + 1; j < vec.size(); ++j)
+        {
+            if (vec[j] < vec[i])
+            {
+                int temp = vec[i];
+                vec[i] = vec[j];
+                vec[j] = temp;
+            }
+        }
+    }
 }

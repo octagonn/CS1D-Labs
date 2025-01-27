@@ -78,20 +78,23 @@ int main()
     }
 
     cout << "Random Numbers: ";
+    
     for (i = 0; i < randomNumbers.size(); ++i)
     {
         cout << randomNumbers[i] << " ";
     }
-    cout << endl;
 
+    cout << endl;
     cout << "Reversed Numbers: ";
+
     for (i = 0; i < reversedNumbers.size(); ++i)
     {
         cout << setw(3) << setfill('0') << reversedNumbers[i] << " ";
     }
-    cout << endl;
 
+    cout << endl;
     cout << "Sum of Digits: ";
+
     for (i = 0; i < randomNumbers.size(); ++i)
     {
         cout << "Sum of digits of " << randomNumbers[i] << " is " << digitSums[i] << endl;
